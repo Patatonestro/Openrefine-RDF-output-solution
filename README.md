@@ -45,8 +45,8 @@ While OpenRefine’s **other export formats** are managed in:
   - **Since the server requires a CSRF token for security validation, The plugin, however, lacks any CSRF token handling, causing the export request to be rejected, thus result in a `missing or invalid CSRF Token Error`.**
 
   - OpenRefine 官方的导出逻辑会先获取 CSRF 令牌 (`csrf_token`) 并将其附加到请求中,服务器的安全机制需要 CSRF 令牌来验证请求，但插件的代码里没有获取 CSRF 令牌的逻辑，导致导出请求被服务器拒绝,这就是为什么导出会报错。
+<img width="1466" alt="截屏2025-02-11 14 08 12" src="https://github.com/user-attachments/assets/dc15acd3-c4a3-4467-801c-12ff265e0edc" />
 
-<img width="1466" alt="截屏2025-02-11 14 08 12" src="https://github.com/user-attachments/assets/a5a7f05a-3018-4176-83dd-e5fd6b236716" />
 
 
 ### **🔧 Solution 解决方案**
@@ -59,7 +59,7 @@ While OpenRefine’s **other export formats** are managed in:
 
 **🔹 修正后的代码（Fixed Code with CSRF Token Handling）：**
 I only modified this part, here is the screenshot
-<img width="888" alt="截屏2025-02-11 14 16 10" src="https://github.com/user-attachments/assets/5585d22a-449a-45e8-a5c4-175ec9a3e017" />
+<img width="888" alt="截屏2025-02-11 14 16 10" src="https://github.com/user-attachments/assets/bc70dee1-089c-4ce2-b965-4111041a2b40" />
 
 ---
 
